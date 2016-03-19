@@ -1,6 +1,14 @@
 <head>
-<title>I244 project</title>
+  <title>I244</title>
 </head>
+
 <body>
-First commit.
+  <h1>Project initialized!</h1>
+
+  {{> hello}}
 </body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
