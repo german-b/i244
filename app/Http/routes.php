@@ -14,10 +14,19 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::group(['middleware' => ['web']], function(){
 
-Route::get('/reminder/{id}', function ($id) {
-  $reminder = App\Reminder::find($id);
-  echo $reminder->content;
+  Route::get('/', function () {
+    return view('reminder');
+  });
+
+
+
+  Route::get('/reminder/{id}', function ($id) {
+    $reminder = App\Reminder::find($id);
+    echo $reminder->content;
+  });
+
+  Route::post('/', 'ReminderController@setReminder');
+
 });
-
-Route::post('/reminder', 'ReminderController@setReminder');

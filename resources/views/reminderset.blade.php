@@ -5,6 +5,14 @@
   <title>Here is your reminder</title>
 </head>
 <body>
-  {{ $reminder }}
+
+  Setdate: {{ $setdate }} </br>
+  Rand: {{ $rand }} </br>
+  Author: {{ $author }} </br>
+  Email: {{ $email }} </br>
+  Content: {{ $content }} </br>
+  Targetdate: {{ $targetdate }} </br>
+
+
 </body>
 </html>
