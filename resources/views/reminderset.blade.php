@@ -12,6 +12,8 @@
   Email: {{ $email }} </br>
   Content: {{ $content }} </br>
   Targetdate: {{ $targetdate }} </br>
+  Targettimestamp: {{ $targettimestamp }} </br>
+  Delay in seconds: {{ $delay }} </br>
 
 
 </body>

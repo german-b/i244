@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRemindersTable extends Migration
+class RemindersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,8 +18,8 @@ class CreateRemindersTable extends Migration
             $table->string('email', 254)->index();
             $table->string('author');
             $table->string('content');
-            $table->int('setdate', 11);
-            $table->int('targetdate', 11);
+            $table->integer('setdate', false, true)->length(11);
+            $table->integer('targetdate', false, true)->length(11);
         });
     }
 
