@@ -17,14 +17,21 @@
 Route::group(['middleware' => ['web']], function(){
 
   Route::get('/', function () {
-    return view('reminder');
+    return view('main');
   });
 
+  Route::get('/tinker', ['as' => 'tinker', function () {
+    return view('tinker');
+  }]);
 
+  Route::get('/test', ['as' => 'test', function () {
+    return view('test');
+  }]);
 
-  Route::get('/reminder/{id}', function ($id) {
-    $reminder = App\Reminder::find($id);
-    echo $reminder->content;
+  Route::get('/reminder/{rand}', function ($rand) {
+    $reminder = App\Reminder::where('rand', $rand)->first();
+    echo "Content: " . $reminder->content . "<br />";
+    echo "Author: " . $reminder->author;
   });
 
   Route::post('/', 'ReminderController@setReminder');
