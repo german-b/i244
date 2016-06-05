@@ -31,7 +31,7 @@ h1{
 		<div class="panel-heading">{{ $author }} shall be reminded of:</div>
 		<div class="panel-body">{{ $content }}</div>
 		<ul class="list-group">
-			<li class="list-group-item">Sent to: {{ $email }}</li>
+			<li class="list-group-item">Send to: {{ $email }}</li>
 			<li class="list-group-item">Reminder set on: {{ $setdate }}</li>
 			<li class="list-group-item">To be reminded on: {{ $targetdate }}</li>
 		</ul>
