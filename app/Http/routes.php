@@ -28,11 +28,11 @@ Route::group(['middleware' => ['web']], function(){
     return view('test');
   }]);
 
-  Route::get('/reminder/{rand}', function ($rand) {
+  Route::get('/reminder/{rand}', ['as' => 'reminder', function ($rand) {
     $reminder = App\Reminder::where('rand', $rand)->first();
     echo "Content: " . $reminder->content . "<br />";
     echo "Author: " . $reminder->author;
-  });
+  }]);
 
   Route::post('/', 'ReminderController@setReminder');
 

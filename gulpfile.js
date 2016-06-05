@@ -13,5 +13,9 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass('app.scss')
-        .browserify('app.js');
+    	.styles(['./node_modules/normalize.css/normalize.css', './node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'])
+        .browserify('app.js')
+        .copy('vendor/bower_components/bootstrap-sass/assets/fonts/bootstrap', 'public/fonts/bootstrap')
+        .copy('./node_modules/moment/min/moment.min.js', 'public/js')
+        .copy('./node_modules/eonasdan-bootstrap-datetimepicker/build/js', 'public/js');
 });

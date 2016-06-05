@@ -22,6 +22,7 @@ class ReminderController extends Controller
 
       //Time & date operations///
       //Target
+      date_default_timezone_set('Europe/Tallinn');
       $date = date_create_from_format('d/m/Y G:i:s', $request->targetdate);
       $targettimestamp = date_timestamp_get($date);
       $reminder->targetdate = $targettimestamp;
