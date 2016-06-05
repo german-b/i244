@@ -30,8 +30,7 @@ Route::group(['middleware' => ['web']], function(){
 
   Route::get('/reminder/{rand}', ['as' => 'reminder', function ($rand) {
     $reminder = App\Reminder::where('rand', $rand)->first();
-    echo "Content: " . $reminder->content . "<br />";
-    echo "Author: " . $reminder->author;
+    return view('reminder', $reminder);
   }]);
 
   Route::post('/', 'ReminderController@setReminder');
