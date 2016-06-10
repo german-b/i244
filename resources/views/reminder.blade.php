@@ -26,7 +26,11 @@ h1{
 </style>
 <div class="container-fluid">
 	<h1>This is a reminder.</h1>
-
+	{{ 
+		date_default_timezone_set('Europe/Tallinn');
+      	$setdate = date('d/m/Y G:i:s', $setdate);
+      	$targetdate = date('d/m/Y G:i:s', $targeetdate);
+    }}
 	<div class="panel panel-default">
 		<div class="panel-heading">{{ $author }} requested to be reminded of:</div>
 		<div class="panel-body">{{ $content }}</div>

@@ -33,7 +33,7 @@ class SendReminderEmail extends Job implements ShouldQueue
     public function handle(Mailer $mailer)
     {
         $mailer->send('test', ['reminder' => $this->reminder], function ($m) {
-            $m->from('german.breus@gmail.com');
+            $m->from('reminder@germanbreus.com');
             $m->to($this->reminder->email);
             $m->subject("A gentle reminder...");
         });
